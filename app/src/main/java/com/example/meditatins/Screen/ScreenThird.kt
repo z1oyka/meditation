@@ -30,11 +30,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.meditatins.R
 import com.example.meditatins.ui.theme.MyBut
 
 @Composable
-fun ScreenThird(modifier: Modifier = Modifier) {
+fun ScreenThird(navController: NavController,
+    modifier: Modifier = Modifier) {
     Box(Modifier.fillMaxSize()) {
 
 
@@ -53,7 +55,9 @@ fun ScreenThird(modifier: Modifier = Modifier) {
             ) {
 
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate("screensecond")
+                    },
                     modifier = Modifier
                         .padding(top = 40.dp, start = 10.dp)
                         .size(50.dp),
@@ -342,9 +346,9 @@ fun ScreenThird(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
-@Composable
-private fun ScreenThirdPrev() {
-    ScreenThird()
-    
-}
+//@Preview
+//@Composable
+//private fun ScreenThirdPrev() {
+//    ScreenThird({})
+//
+//}

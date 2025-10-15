@@ -95,7 +95,9 @@ fun Screensecnd (navController: NavController,
             Column(modifier = Modifier,
                 horizontalAlignment = Alignment.CenterHorizontally ) {
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate("screenthird")
+                    },
                     modifier = Modifier.size(65.dp, 65.dp),
                     colors = ButtonDefaults.buttonColors(MyGrey),
                     shape = RoundedCornerShape(24.dp),

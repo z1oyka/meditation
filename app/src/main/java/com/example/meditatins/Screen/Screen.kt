@@ -33,7 +33,7 @@ fun Screen(
     modifier: Modifier = Modifier) {
     Box(Modifier.fillMaxSize()){
         Image(painter = painterResource(R.drawable.sleep),
-            contentDescription = "фонfdhgjkfhsdjkgfsdjkhjgjkfsdkjghfsdhgjkfsdhg")
+            contentDescription = "фонf")
     }
     Column (modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
