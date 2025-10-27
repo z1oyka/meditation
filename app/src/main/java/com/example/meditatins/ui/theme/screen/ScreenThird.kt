@@ -1,6 +1,7 @@
-package com.example.meditatins.Screen
+package com.example.meditatins.ui.theme.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,20 +24,32 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.meditatins.R
+import com.example.meditatins.ui.theme.MyBaground
+import com.example.meditatins.ui.theme.MyBlue
 import com.example.meditatins.ui.theme.MyBut
 
 @Composable
 fun ScreenThird(navController: NavController,
     modifier: Modifier = Modifier) {
+    var isPressed1 by remember { mutableStateOf(false) }
+    var isPressed2 by remember { mutableStateOf(false) }
+    var isPressed3 by remember { mutableStateOf(false) }
+    var isPressed4 by remember { mutableStateOf(false) }
+    var isPressed5 by remember { mutableStateOf(false) }
+
     Box(Modifier.fillMaxSize()) {
 
 
@@ -255,92 +268,196 @@ fun ScreenThird(navController: NavController,
 
     ) {
 
-        Image(
-            painter = painterResource(R.drawable.restangle),
-            contentDescription = "панель",
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(100.dp)
-        )
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 12.dp),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Button(
-                onClick = {},
-                modifier = Modifier.size(80.dp),
-                colors = ButtonDefaults.buttonColors(MyBut),
-                shape = RoundedCornerShape(24.dp),
-                contentPadding = PaddingValues(0.dp)
+        Row(modifier = Modifier.fillMaxWidth()
+            .height(90.dp)
+            .background(MyBaground),
 
-            ) {
-                Image(painter = painterResource(R.drawable.ic_myhome),
-                    contentDescription = "дом",
-                    modifier = Modifier.size(28.dp,32.dp))
+            horizontalArrangement = Arrangement.Center) {
 
+//        Image(
+//            painter = painterResource(R.drawable.restangle),
+//            contentDescription = "панель",
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .height(150.dp)
+//        )
+
+//        Row(
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(bottom = 12.dp),
+//            horizontalArrangement = Arrangement.Center
+//        ) {
+            Column(modifier = Modifier,
+                horizontalAlignment = Alignment.CenterHorizontally) {
+
+                Button(
+                    onClick = {
+                        isPressed1 = !isPressed1
+                        isPressed2 = false
+                        isPressed3 = false
+                        isPressed4 = false
+                        isPressed5 = false
+                    },
+                    modifier = Modifier.size(55.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isPressed1) MyBlue else MyBut
+                    ),
+                    shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(10.dp)
+
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_myhome),
+                        contentDescription = "дом",
+                        modifier = Modifier.size(28.dp, 32.dp),
+                        colorFilter = if (isPressed1) ColorFilter.tint(Color.White) else ColorFilter.tint(
+                            Color.Gray)
+                    )
+                }
+                Text("Home",
+                    fontSize = 14.sp,
+                    color = if (isPressed1) Color.White else Color.Gray)
             }
-            Button(
-                onClick = {},
-                modifier = Modifier.size(80.dp),
-                colors = ButtonDefaults.buttonColors(MyBut),
-                shape = RoundedCornerShape(24.dp)
+            Spacer(Modifier.width(15.dp))
 
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.ic_moon),
-                    contentDescription = "луна",
-                    modifier = Modifier.fillMaxSize()
-                )
+            Column(modifier = Modifier,
+                horizontalAlignment = Alignment.CenterHorizontally) {
+                Spacer(Modifier.height(3.dp))
+                Button(
+                    onClick = {
+                        isPressed2 = !isPressed2
+                        isPressed1 = false
+                        isPressed3 = false
+                        isPressed4 = false
+                        isPressed5 = false
+                    },
+                    modifier = Modifier.size(55.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isPressed2) MyBlue else MyBut
+                    ),
+                    shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(10.dp)
+
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_moon),
+                        contentDescription = "луна",
+                        modifier = Modifier.fillMaxSize(),
+                        colorFilter = if (isPressed2) ColorFilter.tint(Color.White) else ColorFilter.tint(
+                            Color.Gray)
+                    )
 
 
+                }
+                Text("Sleep",
+                    fontSize = 14.sp,
+                    color = if (isPressed2) Color.White else Color.Gray)
             }
-            Button(
-                onClick = {},
-                modifier = Modifier.size(80.dp),
-                colors = ButtonDefaults.buttonColors(MyBut),
-                shape = RoundedCornerShape(24.dp),
-                contentPadding = PaddingValues(0.dp)
+            Spacer(Modifier.width(15.dp))
 
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.ic_mymedit),
-                    contentDescription = "луна",
-                    modifier = Modifier.size(27.dp,31.dp)
-                )
 
+            Column(modifier = Modifier,
+                horizontalAlignment = Alignment.CenterHorizontally) {
+                Button(
+                    onClick = {
+                        isPressed3 = !isPressed3
+                        isPressed2 = false
+                        isPressed1 = false
+                        isPressed4 = false
+                        isPressed5 = false
+                    },
+                    modifier = Modifier.size(55.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isPressed3) MyBlue else MyBut
+                    ),
+                    shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(10.dp)
+
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_mymedit),
+                        contentDescription = "луна",
+                        modifier = Modifier.size(27.dp, 31.dp),
+                        colorFilter = if (isPressed3) ColorFilter.tint(Color.White) else ColorFilter.tint(
+                            Color.Gray)
+                    )
+
+                }
+                Text("Meditate",
+                    fontSize = 14.sp,
+                    color = if (isPressed3) Color.White else Color.Gray)
             }
-            Button(
-                onClick = {},
-                modifier = Modifier.size(80.dp),
-                colors = ButtonDefaults.buttonColors(MyBut),
-                shape = RoundedCornerShape(24.dp)
 
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.ic_mysic),
-                    contentDescription = "луна",
-                    modifier = Modifier.fillMaxSize()
-                )
+            Spacer(Modifier.width(15.dp))
 
+
+
+            Column(modifier = Modifier,
+                horizontalAlignment = Alignment.CenterHorizontally) {
+                Button(
+                    onClick = {
+                        isPressed4 = !isPressed4
+                        isPressed2 = false
+                        isPressed3 = false
+                        isPressed1 = false
+                        isPressed5 = false
+                    },
+                    modifier = Modifier.size(55.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isPressed4) MyBlue else MyBut
+                    ),
+                    shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(10.dp)
+
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_mysic),
+                        contentDescription = "луна",
+                        modifier = Modifier.fillMaxSize(),
+                        colorFilter = if (isPressed4) ColorFilter.tint(Color.White) else ColorFilter.tint(
+                            Color.Gray)
+                    )
+
+                }
+                Text("Music",
+                    fontSize = 14.sp,
+                    color = if (isPressed4) Color.White else Color.Gray)
             }
-            Button(
-                onClick = {},
-                modifier = Modifier.size(80.dp),
-                colors = ButtonDefaults.buttonColors(MyBut),
-                shape = RoundedCornerShape(24.dp),
-                contentPadding = PaddingValues(0.dp)
+            Spacer(Modifier.width(15.dp))
 
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.ic_avatar),
-                    contentDescription = "луна",
-                    modifier = Modifier.size(23.dp,27.dp)
+            Column(modifier = Modifier,
+                horizontalAlignment = Alignment.CenterHorizontally) {
+                Button(
+                    onClick = {
+                        isPressed5 = !isPressed5
+                        isPressed2 = false
+                        isPressed3 = false
+                        isPressed4 = false
+                        isPressed1 = false
+                    },
+                    modifier = Modifier.size(55.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isPressed5) MyBlue else MyBut
+                    ),
+                    shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(10.dp)
 
-                )
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_avatar),
+                        contentDescription = "луна",
+                        modifier = Modifier.size(23.dp, 27.dp),
+                        colorFilter = if (isPressed5) ColorFilter.tint(Color.White) else ColorFilter.tint(
+                            Color.Gray)
 
+                    )
+
+                }
+                Text("Afsar",
+                    fontSize = 14.sp,
+                    color = if (isPressed5) Color.White else Color.Gray)
             }
         }
     }

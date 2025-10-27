@@ -1,4 +1,4 @@
-package com.example.meditatins.Screen
+package com.example.meditatins.ui.theme.screen
 
 
 import androidx.compose.foundation.Image
@@ -18,8 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -32,7 +32,7 @@ fun Screen(
     navController: NavController,
     modifier: Modifier = Modifier) {
     Box(Modifier.fillMaxSize()){
-        Image(painter = painterResource(R.drawable.sleep),
+        Image(painter = painterResource(R.drawable.firstbackg),
             contentDescription = "фонf")
     }
     Column (modifier = Modifier.fillMaxSize(),
@@ -45,15 +45,17 @@ fun Screen(
         Text("Welcome to Sleep",
         fontSize = 30.sp,
             textAlign = TextAlign.Center,
-            color = Color.White
+            color = Color.White,
+            fontWeight = FontWeight.Bold
             )
         Spacer(Modifier.height(10.dp))
 
         Text("Explore the new king of sleep. It uses sound\n and vesualization to create perfect conditions\n for refreshing sleep.",
-            fontSize = 18.sp,
+            fontSize = 16.sp,
             textAlign =  TextAlign.Center,
-            color = Color.Gray,
-            modifier = Modifier.padding(start = 10.dp, end = 10.dp))
+            color = Color.White,
+            modifier = Modifier.padding(start = 10.dp, end = 10.dp),
+            fontWeight = FontWeight.Light)
 
         Spacer(Modifier.height(460.dp))
         Button(onClick = {
@@ -66,8 +68,10 @@ fun Screen(
 
 
         ) {
-            Text("get started",
-                fontSize = 25.sp)
+            Text("GET STARTED",
+                fontSize = 14.sp,
+                modifier = Modifier,
+                fontWeight = FontWeight.Medium)
         }
 
 

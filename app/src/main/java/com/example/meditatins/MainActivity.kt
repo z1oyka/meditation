@@ -10,9 +10,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.meditatins.ui.theme.MeditatinsTheme
-import com.example.meditatins.Screen.Screen
-import com.example.meditatins.Screen.ScreenThird
-import com.example.meditatins.Screen.Screensecnd
+import com.example.meditatins.ui.theme.screen.Screen
+import com.example.meditatins.ui.theme.screen.ScreenThird
+import com.example.meditatins.ui.theme.screen.Screensecnd
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
