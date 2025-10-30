@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.meditatins.ui.theme.MeditatinsTheme
 import com.example.meditatins.ui.theme.screen.Screen
 import com.example.meditatins.ui.theme.screen.ScreenThird
+import com.example.meditatins.ui.theme.screen.Screenfour
 import com.example.meditatins.ui.theme.screen.Screensecnd
 
 class MainActivity : ComponentActivity() {
@@ -47,6 +48,9 @@ fun NavigationFun (modifier: Modifier = Modifier) {
         }
         composable("screenthird"){
             ScreenThird(navController = navController)
+        }
+        composable("screenfour"){
+            Screenfour(navController = navController)
         }
 
 

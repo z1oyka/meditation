@@ -1,10 +1,12 @@
 package com.example.meditatins.ui.theme.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +19,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -27,19 +31,35 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.meditatins.R
+import com.example.meditatins.ui.theme.MyBaground
 import com.example.meditatins.ui.theme.Mypurple
 
 @Composable
-fun Screenfour(modifier: Modifier = Modifier) {
+fun Screenfour(navController: NavController,
+               modifier: Modifier = Modifier) {
     Image(painter = painterResource(R.drawable.sleepmusc),
         contentDescription = "основн",
         modifier = Modifier.fillMaxSize())
+
+
+
     Box(modifier = Modifier.fillMaxSize()) {
+
+
+
+
+
+
+
 
         Column(modifier = Modifier
             .verticalScroll(rememberScrollState())
@@ -49,24 +69,26 @@ fun Screenfour(modifier: Modifier = Modifier) {
                 contentDescription = "пейзаж2",
                 modifier = Modifier.size(414.dp,290.dp)
             )
-            Spacer(Modifier.height(30.dp))
+            Spacer(Modifier.height(20.dp))
             Text("Night Island",
                 modifier = Modifier
                     .padding(start = 15.dp),
-                fontSize = 33.sp,
+                fontSize = 34.sp,
+                fontWeight = FontWeight.Bold,
                 color = Color.White)
-            Spacer(Modifier.height(5.dp))
-            Text("80 MIN-sleep music",
-                fontSize = 22.sp,
+            Spacer(Modifier.height(15.dp))
+            Text("45 MIN • SLEEP MUSIC",
+                fontSize = 14.sp,
                 modifier = Modifier
                     .padding(start = 15.dp),
                 color = Color.Gray)
-            Spacer(Modifier.height(5.dp))
+            Spacer(Modifier.height(15.dp))
             Text("Ease the mind into a restful night’s sleep with\nthese deep, amblent tones.",
                 modifier = Modifier
                     .padding(start = 15.dp),
                 color = Color.Gray,
-                fontSize = 18.sp)
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Light)
             Spacer(Modifier.height(20.dp))
 
 
@@ -76,25 +98,28 @@ fun Screenfour(modifier: Modifier = Modifier) {
                 Icon(
                     Icons.Filled.Favorite,
                     contentDescription = "любимое",
-                    modifier = Modifier,
-                    Color.White
+                    modifier = Modifier.size(17.dp,17.dp),
+                    Color.White,
+
                 )
-                Text("12.435 favorits",
+                Spacer(Modifier.width(5.dp))
+                Text("24.234 favorits",
                     color = Color.White,
-                    fontSize = 18.sp)
-                Spacer(Modifier.width(20.dp))
-                Icon(Icons.Filled.PlayArrow,
+                    fontSize = 14.sp)
+                Spacer(Modifier.width(30.dp))
+                Image(painter = painterResource(R.drawable.ic_headps),
                     contentDescription = "прослушивания",
-                    modifier = Modifier,
-                    Color.White)
-                Text("34.56 listening",
-                    fontSize = 18.sp,
+                    modifier = Modifier.size(17.dp,17.dp))
+                Spacer(Modifier.width(5.dp))
+
+                Text("34.234 listening",
+                    fontSize = 14.sp,
                     color = Color.White)
             }
             Spacer(Modifier.height(40.dp))
 
 
-            Text("Related:",
+            Text("Related",
                 fontSize = 24.sp,
                 color = Color.White,
                 modifier = Modifier.padding(start = 15.dp))
@@ -111,13 +136,14 @@ fun Screenfour(modifier: Modifier = Modifier) {
                     Text(
                         "Night Island",
                         color = Color.White,
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(start = 7.dp)
+                        fontSize = 18.sp,
+                        modifier = Modifier.padding(start = 7.dp),
+                        fontWeight = FontWeight.Bold
                     )
                     Spacer(Modifier.height(5.dp))
                     Text(
-                        "45 MIN SLEEP MUSIC",
-                        fontSize = 14.sp,
+                        "45 MIN • SLEEP MUSIC",
+                        fontSize = 11.sp,
                         color = Color.Gray,
                         modifier = Modifier.padding(start = 7.dp)
                     )
@@ -137,13 +163,14 @@ fun Screenfour(modifier: Modifier = Modifier) {
                     Text(
                         "Good Night",
                         color = Color.White,
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(start = 7.dp)
+                        fontSize = 18.sp,
+                        modifier = Modifier.padding(start = 7.dp),
+                        fontWeight = FontWeight.Bold
                     )
                     Spacer(Modifier.height(5.dp))
                     Text(
-                        "45 MIN SLEEP MUSIC",
-                        fontSize = 14.sp,
+                        "45 MIN • SLEEP MUSIC",
+                        fontSize = 11.sp,
                         color = Color.Gray,
                         modifier = Modifier.padding(start = 7.dp)
                     )
@@ -162,13 +189,14 @@ fun Screenfour(modifier: Modifier = Modifier) {
                     Text(
                         "Sweet Sleep",
                         color = Color.White,
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(start = 7.dp)
+                        fontSize = 18.sp,
+                        modifier = Modifier.padding(start = 7.dp),
+                        fontWeight = FontWeight.Bold
                     )
                     Spacer(Modifier.height(5.dp))
                     Text(
-                        "45 MIN SLEEP MUSIC",
-                        fontSize = 14.sp,
+                        "45 MIN • SLEEP MUSIC",
+                        fontSize = 11.sp,
                         color = Color.Gray,
                         modifier = Modifier.padding(start = 7.dp)
                     )
@@ -185,14 +213,15 @@ fun Screenfour(modifier: Modifier = Modifier) {
                     Text(
                         "Moon Clouds",
                         color = Color.White,
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(start = 7.dp)
+                        fontSize = 18.sp,
+                        modifier = Modifier.padding(start = 7.dp),
+                        fontWeight = FontWeight.Bold
 
                     )
                     Spacer(Modifier.height(5.dp))
                     Text(
-                        "45 MIN SLEEP MUSIC",
-                        fontSize = 14.sp,
+                        "45 MIN • SLEEP MUSIC",
+                        fontSize = 11.sp,
                         color = Color.Gray,
                         modifier = Modifier.padding(start = 7.dp)
                     )
@@ -223,35 +252,99 @@ fun Screenfour(modifier: Modifier = Modifier) {
 
 
     ) {
-        Image(
-            painter = painterResource(R.drawable.restangle),
-            contentDescription = "панель",
+        Row (modifier = Modifier.background(MyBaground)
+            .height(85.dp)){
+
+
+            Button(onClick = {},
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp)
+                    .height(80.dp)
+                    .padding(vertical = 10.dp),
+                colors = ButtonDefaults.buttonColors(Mypurple)
+            ) {
+                Text("PLAY",
+                    fontSize = 14.sp,
+                    color = Color.White,
+                )
+            }
+        }
+
+
+
+
+
+
+    }
+    Row() {
+        Button(onClick = {
+            navController.navigate("screenthird")
+        },
             modifier = Modifier
-                .fillMaxWidth()
-                .height(90.dp)
-                .align(Alignment.BottomStart)
+                .padding(top = 40.dp, start = 10.dp)
+                .size(50.dp),
+            contentPadding = PaddingValues(0.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.White,
+                contentColor = Color.Black
+            )
 
-        )
-
-
-        Button(onClick = {},
-            modifier = Modifier
-                .size(374.dp, 70.dp)
-                .padding(bottom = 15.dp),
-            colors = ButtonDefaults.buttonColors(Mypurple)
         ) {
-            Text("PLAY",
-                fontSize = 18.sp,
-                color = Color.White,
+            Icon(
+                Icons.Filled.ArrowBack,
+                contentDescription = "назат",
+                modifier = Modifier.size(25.dp))
+        }
+        Spacer(Modifier.width(220.dp))
+
+
+        Button(onClick = {
+
+        },
+            modifier = Modifier
+                .padding(top = 40.dp)
+                .size(55.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Black.copy(0.5f)
+            ),
+            contentPadding = PaddingValues(0.dp)
+        ) {
+            Icon(
+                Icons.Filled.FavoriteBorder,
+                contentDescription = "любимое",
+                modifier = Modifier.size(19.dp,19.dp),
+                Color.White,
+
                 )
         }
+        Spacer(Modifier.width(10.dp))
+        Button(onClick = {
+
+        },
+            modifier = Modifier
+                .padding(top = 40.dp)
+                .size(55.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Black.copy(0.5f)
+            ),
+            contentPadding = PaddingValues(0.dp)
+        ) {
+            Image(painter = painterResource(R.drawable.saved),
+                contentDescription = "созранненый",
+                colorFilter = ColorFilter.tint(Color.White),
+                modifier = Modifier.size(20.dp))
+        }
+
+
+
 
 
     }
 }
-@Preview
-@Composable
-private fun ScreenPrev() {
-    Screenfour()
-
-}
+//@Preview
+//@Composable
+//private fun ScreenPrev() {
+//    Screenfour()
+//
+//}

@@ -446,7 +446,7 @@ fun Screensecnd (navController: NavController,
                     fontSize = 14.sp,
                     color = if (isPressed1) Color.White else Color.Gray)
             }
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
             Column(modifier = Modifier,
                 horizontalAlignment = Alignment.CenterHorizontally) {
@@ -482,7 +482,7 @@ fun Screensecnd (navController: NavController,
                     fontSize = 14.sp,
                     color = if (isPressed2) Color.White else Color.Gray)
             }
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
 
             Column(modifier = Modifier,
@@ -517,7 +517,7 @@ fun Screensecnd (navController: NavController,
                     color = if (isPressed3) Color.White else Color.Gray)
             }
 
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
 
 
@@ -553,7 +553,7 @@ fun Screensecnd (navController: NavController,
                     fontSize = 14.sp,
                     color = if (isPressed4) Color.White else Color.Gray)
             }
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
             Column(modifier = Modifier,
                 horizontalAlignment = Alignment.CenterHorizontally) {

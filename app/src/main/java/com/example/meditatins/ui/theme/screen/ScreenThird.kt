@@ -2,6 +2,7 @@ package com.example.meditatins.ui.theme.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -70,6 +72,7 @@ fun ScreenThird(navController: NavController,
                 Button(
                     onClick = {
                         navController.navigate("screensecond")
+
                     },
                     modifier = Modifier
                         .padding(top = 40.dp, start = 10.dp)
@@ -93,13 +96,16 @@ fun ScreenThird(navController: NavController,
 
 
 
+
+
                 Text(
                     "Sleep music",
-                    fontSize = 25.sp,
+                    fontSize = 24.sp,
                     color = Color.White,
                     modifier = Modifier
                         .padding(top = 50.dp)
-                        .align(Alignment.TopCenter)
+                        .align(Alignment.TopCenter),
+                    fontWeight = FontWeight.Bold
                 )
 
                 Row(
@@ -113,19 +119,23 @@ fun ScreenThird(navController: NavController,
                             painter = painterResource(R.drawable.pra),
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
+                                .clickable {
+                                    navController.navigate("screenfour")
+                                }
                         )
                         Spacer(Modifier.height(7.dp))
                         Text(
                             "Night Island",
                             color = Color.White,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(start = 7.dp)
+                            fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 7.dp),
+                            fontWeight = FontWeight.Bold
                         )
-                        Spacer(Modifier.height(5.dp))
+
 
                         Text(
-                            "45 MIN SLEEP MUSIC",
-                            fontSize = 13.sp,
+                            "45 MIN • SLEEP MUSIC",
+                            fontSize = 11.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 7.dp)
                         )
@@ -142,14 +152,15 @@ fun ScreenThird(navController: NavController,
                         Text(
                             "Good Night",
                             color = Color.White,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(start = 7.dp)
+                            fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 7.dp),
+                            fontWeight = FontWeight.Bold
                         )
-                        Spacer(Modifier.height(5.dp))
+
 
                         Text(
-                            "45 MIN SLEEP MUSIC",
-                            fontSize = 13.sp,
+                            "45 MIN • SLEEP MUSIC",
+                            fontSize = 11.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 7.dp)
                         )
@@ -166,14 +177,14 @@ fun ScreenThird(navController: NavController,
                         Text(
                             "Sweet Sleep",
                             color = Color.White,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(start = 7.dp)
+                            fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 7.dp),
+                            fontWeight = FontWeight.Bold
                         )
-                        Spacer(Modifier.height(5.dp))
 
                         Text(
-                            "80 MIN",
-                            fontSize = 13.sp,
+                            "45 MIN • SLEEP MUSIC",
+                            fontSize = 11.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 7.dp)
                         )
@@ -191,14 +202,14 @@ fun ScreenThird(navController: NavController,
                         Text(
                             "Sweet Sleep",
                             color = Color.White,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(start = 7.dp)
+                            fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 7.dp),
+                            fontWeight = FontWeight.Bold
                         )
-                        Spacer(Modifier.height(5.dp))
 
                         Text(
-                            "45 MIN SLEEP MUSIC",
-                            fontSize = 13.sp,
+                            "45 MIN • SLEEP MUSIC",
+                            fontSize = 11.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 7.dp)
                         )
@@ -215,14 +226,14 @@ fun ScreenThird(navController: NavController,
                         Text(
                             "Moon Clouds",
                             color = Color.White,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(start = 7.dp)
+                            fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 7.dp),
+                            fontWeight = FontWeight.Bold
                         )
-                        Spacer(Modifier.height(5.dp))
 
                         Text(
-                            "45 MIN SLEEP MUSIC",
-                            fontSize = 13.sp,
+                            "45 MIN • SLEEP MUSIC",
+                            fontSize = 11.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 7.dp)
                         )
@@ -239,14 +250,14 @@ fun ScreenThird(navController: NavController,
                         Text(
                             "Sweet Sleep",
                             color = Color.White,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(start = 7.dp)
+                            fontSize = 18.sp,
+                            modifier = Modifier.padding(start = 7.dp),
+                            fontWeight = FontWeight.Bold
                         )
-                        Spacer(Modifier.height(5.dp))
 
                         Text(
-                            "45 MIN SLEEP MUSIC",
-                            fontSize = 13.sp,
+                            "45 MIN • SLEEP MUSIC",
+                            fontSize = 11.sp,
                             color = Color.Gray,
                             modifier = Modifier.padding(start = 7.dp)
                         )
@@ -320,7 +331,7 @@ fun ScreenThird(navController: NavController,
                     fontSize = 14.sp,
                     color = if (isPressed1) Color.White else Color.Gray)
             }
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
             Column(modifier = Modifier,
                 horizontalAlignment = Alignment.CenterHorizontally) {
@@ -355,7 +366,7 @@ fun ScreenThird(navController: NavController,
                     fontSize = 14.sp,
                     color = if (isPressed2) Color.White else Color.Gray)
             }
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
 
             Column(modifier = Modifier,
@@ -390,7 +401,7 @@ fun ScreenThird(navController: NavController,
                     color = if (isPressed3) Color.White else Color.Gray)
             }
 
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
 
 
@@ -425,7 +436,7 @@ fun ScreenThird(navController: NavController,
                     fontSize = 14.sp,
                     color = if (isPressed4) Color.White else Color.Gray)
             }
-            Spacer(Modifier.width(15.dp))
+            Spacer(Modifier.width(25.dp))
 
             Column(modifier = Modifier,
                 horizontalAlignment = Alignment.CenterHorizontally) {
