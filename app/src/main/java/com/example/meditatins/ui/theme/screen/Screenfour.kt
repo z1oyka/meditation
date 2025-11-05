@@ -256,7 +256,7 @@ fun Screenfour(navController: NavController,
             .height(85.dp)){
 
 
-            Button(onClick = {},
+            Button(onClick = {navController.navigate("screenfive")},
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 15.dp)

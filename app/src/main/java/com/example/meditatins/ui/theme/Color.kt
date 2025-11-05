@@ -16,5 +16,9 @@ val MyWhite = Color(0xFFFDD58B)
 val MyBut = Color(0x00FDD58B)
 val MyBaground = Color(0xFF03174C)
 val Mypurple = Color(0xFF8D96FB)
+val MyGraay = Color(0xFF253665)
+
+
+
 
 
