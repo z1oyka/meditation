@@ -28,6 +28,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,17 +40,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.meditatins.R
 import com.example.meditatins.ui.theme.MyBaground
 import com.example.meditatins.ui.theme.Mypurple
+import com.example.meditatins.ui.theme.ScreenViewModel
 
 @Composable
 fun Screenfour(navController: NavController,
-               modifier: Modifier = Modifier) {
+               modifier: Modifier = Modifier,
+               viewModel: ScreenViewModel) {
     Image(painter = painterResource(R.drawable.sleepmusc),
         contentDescription = "основн",
         modifier = Modifier.fillMaxSize())
+
+
+    val viewModel: ScreenViewModel = viewModel()
+    val selectedImage by viewModel.selectedImage.collectAsState()
+
 
 
 
@@ -64,18 +74,55 @@ fun Screenfour(navController: NavController,
         Column(modifier = Modifier
             .verticalScroll(rememberScrollState())
             ) {
-            Image(
-                painter = painterResource(R.drawable.praa),
-                contentDescription = "пейзаж2",
-                modifier = Modifier.size(414.dp,290.dp)
-            )
+            when(selectedImage){
+                1 -> Image(
+                    painter = painterResource(R.drawable.praa),
+                    contentDescription = "пейзаж2",
+                    modifier = Modifier.size(414.dp, 290.dp)
+                )
+                2 -> Image(
+                    painter = painterResource(R.drawable.prb),
+                    contentDescription = "пейзаж",
+                    modifier = Modifier.size(414.dp, 290.dp)
+                )
+                3 -> Image(
+                    painter = painterResource(R.drawable.prc),
+                    contentDescription = "пейзаж3",
+                    modifier = Modifier.size(414.dp, 290.dp)
+                )
+
+
+            }
+
+
             Spacer(Modifier.height(20.dp))
-            Text("Night Island",
-                modifier = Modifier
-                    .padding(start = 15.dp),
-                fontSize = 34.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White)
+            when(selectedImage){
+                1 -> Text("Night Island",
+                    modifier = Modifier
+                        .padding(start = 15.dp),
+                    fontSize = 34.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White)
+                2-> Text("Sweet Sleep",
+                    modifier = Modifier
+                        .padding(start = 15.dp),
+                    fontSize = 34.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White)
+                3-> Text("Good Night",
+                    modifier = Modifier
+                        .padding(start = 15.dp),
+                    fontSize = 34.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White)
+
+            }
+//            Text("Night Island",
+//                modifier = Modifier
+//                    .padding(start = 15.dp),
+//                fontSize = 34.sp,
+//                fontWeight = FontWeight.Bold,
+//                color = Color.White)
             Spacer(Modifier.height(15.dp))
             Text("45 MIN • SLEEP MUSIC",
                 fontSize = 14.sp,
@@ -157,7 +204,7 @@ fun Screenfour(navController: NavController,
                         contentDescription = "пейзаж2",
                         modifier = Modifier
                             .size(177.dp, 122.dp)
-                            .clickable {  }
+                            .clickable { }
                     )
                     Spacer(Modifier.height(7.dp))
                     Text(
@@ -252,7 +299,8 @@ fun Screenfour(navController: NavController,
 
 
     ) {
-        Row (modifier = Modifier.background(MyBaground)
+        Row (modifier = Modifier
+            .background(MyBaground)
             .height(85.dp)){
 
 

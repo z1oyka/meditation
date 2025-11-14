@@ -6,10 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.meditatins.ui.theme.MeditatinsTheme
+import com.example.meditatins.ui.theme.ScreenViewModel
 import com.example.meditatins.ui.theme.screen.Screen
 import com.example.meditatins.ui.theme.screen.ScreenThird
 import com.example.meditatins.ui.theme.screen.Screenfour
@@ -35,6 +37,7 @@ class MainActivity : ComponentActivity() {
 fun NavigationFun (modifier: Modifier = Modifier) {
     val navController = rememberNavController()
 
+
     NavHost(navController = navController,
         startDestination = "screen") {
         composable("screen") {
@@ -48,10 +51,10 @@ fun NavigationFun (modifier: Modifier = Modifier) {
              Screensecnd(navController = navController)
         }
         composable("screenthird"){
-            ScreenThird(navController = navController)
+            ScreenThird(navController = navController, viewModel = viewModel())
         }
         composable("screenfour"){
-            Screenfour(navController = navController)
+            Screenfour(navController = navController, viewModel = viewModel())
         }
        composable ("screenfive"){
             Screenfve(navController = navController)

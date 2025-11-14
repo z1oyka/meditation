@@ -37,22 +37,37 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.meditatins.R
 import com.example.meditatins.ui.theme.MyBaground
 import com.example.meditatins.ui.theme.MyBlue
 import com.example.meditatins.ui.theme.MyBut
+import com.example.meditatins.ui.theme.ScreenViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+
 
 @Composable
 fun ScreenThird(navController: NavController,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier,
+                viewModel: ScreenViewModel) {
     var isPressed1 by remember { mutableStateOf(false) }
     var isPressed2 by remember { mutableStateOf(false) }
     var isPressed3 by remember { mutableStateOf(false) }
     var isPressed4 by remember { mutableStateOf(false) }
     var isPressed5 by remember { mutableStateOf(false) }
 
+    val viewModel: ScreenViewModel = viewModel()
+    val _selectedImage = MutableStateFlow(1)
+
+
+
+    val selectedImage: StateFlow<Int> = _selectedImage.asStateFlow()
+
     Box(Modifier.fillMaxSize()) {
+
 
 
 
@@ -120,7 +135,9 @@ fun ScreenThird(navController: NavController,
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
                                 .clickable {
+                                    viewModel.selectimage(1)
                                     navController.navigate("screenfour")
+
                                 }
                         )
                         Spacer(Modifier.height(7.dp))
@@ -146,6 +163,11 @@ fun ScreenThird(navController: NavController,
                             painter = painterResource(R.drawable.prc),
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
+                                .clickable {
+                                    viewModel.selectimage(2)
+                                    navController.navigate("screenfour")
+
+                                }
                         )
                         Spacer(Modifier.height(7.dp))
 
@@ -171,6 +193,11 @@ fun ScreenThird(navController: NavController,
                             painter = painterResource(R.drawable.prc),
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
+                                .clickable {
+                                    viewModel.selectimage(3)
+                                    navController.navigate("screenfour")
+
+                                }
                         )
                         Spacer(Modifier.height(7.dp))
 
@@ -197,6 +224,11 @@ fun ScreenThird(navController: NavController,
                             painter = painterResource(R.drawable.prb),
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
+                                .clickable {
+                                    viewModel.selectimage(3)
+                                    navController.navigate("screenfour")
+
+                                }
                         )
                         Spacer(Modifier.height(7.dp))
                         Text(
@@ -220,6 +252,11 @@ fun ScreenThird(navController: NavController,
                             painter = painterResource(R.drawable.pra),
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
+                                .clickable {
+                                    viewModel.selectimage(1)
+                                    navController.navigate("screenfour")
+
+                                }
                         )
                         Spacer(Modifier.height(7.dp))
 
@@ -244,6 +281,11 @@ fun ScreenThird(navController: NavController,
                             painter = painterResource(R.drawable.prc),
                             contentDescription = "пейхаж 1",
                             modifier = Modifier.size(177.dp, 123.dp)
+                                .clickable {
+                                    viewModel.selectimage(3)
+                                    navController.navigate("screenfour")
+
+                                }
                         )
                         Spacer(Modifier.height(7.dp))
 
